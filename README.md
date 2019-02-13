@@ -46,6 +46,15 @@ npm run watch:server
 ```
 Notice that the server uses MongoDB so we need to have a MongoDB instance running so the server can connect to it
 
+### Running Everything
+
+Once you've built your Angular application, you can run
+
+```
+npm run watch
+```
+This will run both your angular app and your server.
+
 ### Alternative commands
 
 If you need to work on the frontend and backend parts at the same time, you can run
