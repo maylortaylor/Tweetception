@@ -9,7 +9,7 @@ import { Roles } from '../../decorators/roles.decorator';
 
 @Controller('api/auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authService: AuthService) { }
 
   @Post('local/signup')
   async requestJsonWebTokenAfterLocalSignUp(@Req() req: Request): Promise<IToken> {
@@ -22,7 +22,7 @@ export class AuthController {
   }
 
   @Get('facebook/uri')
-  async requestFacebookRedirectUrl(): Promise<{redirect_uri: string}> {
+  async requestFacebookRedirectUrl(): Promise<{ redirect_uri: string }> {
     return await this.authService.requestFacebookRedirectUri();
   }
 
@@ -71,6 +71,6 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'), RolesGuard)
   public async authorized(): Promise<any> {
     console.log('Authorized route...');
-    return {'message': 'Hello'};
+    return { message: 'Hello' };
   }
 }

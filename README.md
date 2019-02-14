@@ -48,20 +48,13 @@ Notice that the server uses MongoDB so we need to have a MongoDB instance runnin
 
 ### Running Everything
 
-Once you've built your Angular application, you can run
-
-```
-npm run watch
-```
-This will run both your angular app and your server.
-
-### Alternative commands
-
 If you need to work on the frontend and backend parts at the same time, you can run
 ```
 npm run watch
 ```
 Then, you can go to the Angular dev server at port 4200 and test server requests (to port 1337), we got a proxy to the backend
+
+### Alternative commands
 
 If you only need to work on the frontend, you can run
 ```
@@ -96,3 +89,11 @@ Modify with your application credentials:
 - src/server/modules/auth/config/twitter-config.ts
 
 To use it in mobile application with Facebook-token integration (Facebook App), use /api/auth/facebook/token endpoint.
+
+### Debug Issues
+
+If you find a situation where you get the `Error: listen EADDRINUSE` problem when running the app in debug mode (`F5`), then you need to kill all your node servers with the command below.
+
+```
+killall -9 node
+```

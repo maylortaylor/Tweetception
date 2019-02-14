@@ -33,7 +33,7 @@ export class AuthService {
     const expiresIn: string = '48h';
     const token: string = sign({
       sub: user.id
-    }, SERVER_CONFIG.jwtSecret, {expiresIn});
+    }, SERVER_CONFIG.jwtSecret, { expiresIn });
 
     return {
       token
@@ -44,7 +44,7 @@ export class AuthService {
     return await this.userModel.findById(id);
   }
 
-  async requestFacebookRedirectUri(): Promise<{redirect_uri: string}> {
+  async requestFacebookRedirectUri(): Promise<{ redirect_uri: string }> {
     const queryParams: string[] = [
       `client_id=${this.fbConfig.client_id}`,
       `redirect_uri=${this.fbConfig.oauth_redirect_uri}`,
@@ -237,9 +237,9 @@ export class AuthService {
     });
   }
 
-  private parseTwitterResponse(response: string): {[key: string]: string | boolean} {
+  private parseTwitterResponse(response: string): { [key: string]: string | boolean } {
     const regex: RegExp = /([a-z_]+?)=([a-zA-Z0-9_-]+)/g;
-    const parsedResponse: {[key: string]: string} = {};
+    const parsedResponse: { [key: string]: string } = {};
 
     let match: RegExpMatchArray = regex.exec(response);
 

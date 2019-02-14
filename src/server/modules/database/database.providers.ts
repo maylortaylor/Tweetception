@@ -7,9 +7,7 @@ export const databaseProviders = [
     useFactory: async () => {
       (mongoose as any).Promise = global.Promise;
 
-      return await mongoose.connect(SERVER_CONFIG.db, {
-        useMongoClient: true,
-      });
+      return await mongoose.connect(SERVER_CONFIG.db, {});
     },
   },
 ];
