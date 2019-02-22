@@ -23,6 +23,7 @@ import { InterceptorsModule } from './interceptors/interceptors.module';
 import { MaterialModule } from './material/material.module';
 import { ServicesModule } from './services/services.module';
 import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './components/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -45,10 +46,13 @@ import { SharedModule } from './shared/shared.module';
     ServicesModule,
     SharedModule,
     GuardsModule,
-    // GraphqlModule,
+    AuthModule,
     InterceptorsModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  exports: [
+
   ],
   bootstrap: [AppComponent]
 })
